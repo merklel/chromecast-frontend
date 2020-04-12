@@ -28,7 +28,7 @@ class CC_Slider_Frame(LabelFrame):
         self.cc = cc
         self.cc.wait()
 
-        if cc.status.is_active_input:
+        if cc.status.status_text != "":
             self.configure(style="mystyle.green.TFrame")
 
 
@@ -69,8 +69,8 @@ class Control_Chromecasts_Gui():
         self.Found_CCs.pack(side=TOP)
 
         # Setup the chomecasts sliders
-        self.chromecasts = [DummyChromecast("Arbeitszimmer", active=True), DummyChromecast("Küche"), DummyChromecast("Wohnung"), DummyChromecast("Wohnzimmer")]
-        # self.__get_chromecasts()
+        # self.chromecasts = [DummyChromecast("Arbeitszimmer", active=True), DummyChromecast("Küche"), DummyChromecast("Wohnung"), DummyChromecast("Wohnzimmer")]
+        self.__get_chromecasts()
 
         self.slider_frames = [CC_Slider_Frame(self.master, cc) for cc in self.chromecasts]
         [sf.pack(side=LEFT) for sf in self.slider_frames]
