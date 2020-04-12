@@ -67,9 +67,17 @@ class CC_Slider_Frame(LabelFrame):
 
 class Control_Chromecasts_Gui():
     def __init__(self, master):
-        frame = Frame(master, width=768, height=576)
-        frame.pack()
-        self.frame = frame
+
+        self.frame_top_line = Frame(master)
+        self.frame_top_line.pack(side=TOP)
+
+        self.frame = Frame(master, width=768, height=576)
+        self.frame.pack(side=TOP)
+
+        frame_buttons = Frame(master)
+        frame_buttons.pack(side=BOTTOM)
+
+
         self.master = master
         self.chromecasts=[]
         self.slider_frames=[]
@@ -81,23 +89,28 @@ class Control_Chromecasts_Gui():
 
         # self.button = Button(frame, text="Exit", command=None)
         # self.button.pack(side=BOTTOM)
-        self.research = Button(master, text="Search for CCs", command=self.__get_chromecasts)
-        self.research.pack(side=BOTTOM)
-        self.research = Button(master, text="Manual update control", command=self.manual_update)
-        self.research.pack(side=BOTTOM)
+        self.research = Button(frame_buttons, text="Search for CCs", command=self.__get_chromecasts)
+        self.research.pack(side=LEFT)
+        self.research = Button(frame_buttons, text="Manual update control", command=self.manual_update)
+        self.research.pack(side=LEFT)
+        self.research = Button(frame_buttons, text="Exit", command=self.exit)
+        self.research.pack(side=LEFT)
 
-        self.load_label = Label(frame, text="Currently looking for chromecasts, be patient...")
+        self.load_label = Label(self.frame_top_line, text="Currently looking for chromecasts, be patient...")
         self.load_label.pack()
+
+    def exit(self):
+        self.master.destroy()
 
     def get_and_draw_chromecasts(self):
         # Setup the chomecasts sliders
         # self.chromecasts = [DummyChromecast("Arbeitszimmer", active=True), DummyChromecast("Küche"), DummyChromecast("Wohnung"), DummyChromecast("Wohnzimmer")]
         self.__get_chromecasts()
 
-        self.slider_frames = [CC_Slider_Frame(self.master, cc) for cc in self.chromecasts]
+        self.slider_frames = [CC_Slider_Frame(self.frame, cc) for cc in self.chromecasts]
         [sf.pack(side=LEFT) for sf in self.slider_frames]
 
-        self.Found_CCs=Label(self.frame, text="Found chromecasts:")
+        self.Found_CCs=Label(self.frame_top_line, text="Found chromecasts:")
         self.Found_CCs.pack(side=TOP)
         self.load_label.destroy()
 
@@ -118,6 +131,9 @@ class Control_Chromecasts_Gui():
 if __name__ == "__main__":
 
     root = Tk()
+    # root.wm_iconbitmap(bitmap="@ico/cc.xbm")
+    root.iconphoto(True, PhotoImage(file="ico/cc.png"))
+    root.protocol("WM_DELETE_WINDOW", root.iconify)
     root.style = Style()
     root.title("Control my Chromecasts")
     root.style.theme_use("clam")
