@@ -9,6 +9,24 @@ App listens to changes of volume through other apps (e.g. google home) and adjus
 Tested with chromecast audios only, i do not have others.
 
 ## Run it
+
+##### Requirements:
+TK Python library:
+
+`sudo apt install python3-tk`
+
+##### PIP
+install it from [pypi](https://pypi.org/project/chromecast-volumecontrol/)
+
+`pip install chromecast-volumecontrol`
+
+then, you can use run 
+
+$ cc_volumecontrol` 
+
+to open the gui 
+
+##### Clone it
 Clone and run gui.py, not yet more available, still under development. Dependencies are python3 and pychromecast.
 
 ## Future
