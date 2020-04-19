@@ -143,6 +143,7 @@ def start_guiapp():
 
     s0=time.monotonic()
     while True:
+        time.sleep(1)
         root.update_idletasks()
         root.update()
 
