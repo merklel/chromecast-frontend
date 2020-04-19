@@ -127,9 +127,7 @@ class Control_Chromecasts_Gui():
         [cf.update_percent_label() for cf in self.slider_frames]
 
 
-
-if __name__ == "__main__":
-
+def start_guiapp():
     root = Tk()
     # root.wm_iconbitmap(bitmap="@ico/cc.xbm")
     root.iconphoto(True, PhotoImage(file=os.path.dirname(__file__)+"/ico/cc.png"))
@@ -159,6 +157,7 @@ if __name__ == "__main__":
 
 
 
-
+if __name__ == "__main__":
+    start_guiapp()
 
 

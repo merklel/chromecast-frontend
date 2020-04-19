@@ -5,7 +5,7 @@ with open("readme.md", "r") as fh:
 
 setuptools.setup(
     name="chromecast_volumecontrol", # Replace with your own username
-    version="0.0.3",
+    version="0.0.5",
     author="Lukas Merkle",
     author_email="lukas.merkle@live.de",
     description="Control Chromecast Volume",
@@ -21,6 +21,7 @@ setuptools.setup(
     include_package_data=True,
     package_data={'': ['ico/*.png']},
     python_requires='>=3.6',
+    scripts=['cc_volumecontrol'],
     install_requires=[
         "pychromecast",
             ]

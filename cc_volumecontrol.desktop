@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=CC_Volumecontrol
+Icon=/home/ga36raf/.local/share/applications/cc.png
+Exec=/home/ga36raf/.local/bin/cc_volumecontrol
+Categories=Application
