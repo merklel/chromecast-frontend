@@ -132,7 +132,7 @@ if __name__ == "__main__":
 
     root = Tk()
     # root.wm_iconbitmap(bitmap="@ico/cc.xbm")
-    root.iconphoto(True, PhotoImage(file=os.path.abspath(os.path.join("chromecast_volumecontrol/ico/")) +"/cc.png"))
+    root.iconphoto(True, PhotoImage(file=os.path.dirname(__file__)+"/ico/cc.png"))
     root.protocol("WM_DELETE_WINDOW", root.iconify)
     root.style = Style()
     root.title("Control my Chromecasts")
