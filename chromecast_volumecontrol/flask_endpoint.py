@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, Response
 from flask_cors import CORS
 import copy
 import json
@@ -19,8 +19,7 @@ def set_volume_of_chromecast():
     print("Got new volume value ({}) for: {}.".format(volume_set_value, cc_friendly_name))
 
 
-    return {"status": 200}
-
+    return 0
 
 if __name__ == "__main__":
     # get_resources_system()

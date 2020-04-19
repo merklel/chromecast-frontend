@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
-from control_chromecasts import Control_Chromecasts
+from chromecast_volumecontrol.control_chromecasts import Control_Chromecasts
 import time
 
 
@@ -132,7 +132,7 @@ if __name__ == "__main__":
 
     root = Tk()
     # root.wm_iconbitmap(bitmap="@ico/cc.xbm")
-    root.iconphoto(True, PhotoImage(file="ico/cc.png"))
+    root.iconphoto(True, PhotoImage(file="chromecast_volumecontrol/ico/cc.png"))
     root.protocol("WM_DELETE_WINDOW", root.iconify)
     root.style = Style()
     root.title("Control my Chromecasts")

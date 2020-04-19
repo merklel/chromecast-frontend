@@ -1,6 +1,6 @@
 ### GUI for Chromecast Volumecontrol
 
-![frontend image](img/gui.png)
+![frontend image](chromecast_volumecontrol/img/gui.png)
 
 Control the volume of your chromecasts through this little gui on your computer of choice, not through the awful google home app. Based on top of the awesome [pychromecast](https://github.com/balloob/pychromecast) lib.
 
