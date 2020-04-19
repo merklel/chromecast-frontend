@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: chromecast-volumecontrol
-Version: 0.0.2
+Version: 0.0.3
 Summary: Control Chromecast Volume
 Home-page: https://github.com/merklel/chromecast-frontend
 Author: Lukas Merkle

@@ -1,2 +1,5 @@
 env/*
 .idea/*
+__pychache__/**
+build/*
+chromecast_volumecontrol.egg-info/*

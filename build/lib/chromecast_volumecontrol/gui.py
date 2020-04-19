@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter.ttk import *
 from chromecast_volumecontrol.control_chromecasts import Control_Chromecasts
 import time
-
+import os
 
 # Settings
 TIME_BETWEEN_UPDATES = 2 # Time between updates of the sliders: read from the chromecasts
@@ -132,7 +132,7 @@ if __name__ == "__main__":
 
     root = Tk()
     # root.wm_iconbitmap(bitmap="@ico/cc.xbm")
-    root.iconphoto(True, PhotoImage(file="chromecast_volumecontrol/ico/cc.png"))
+    root.iconphoto(True, PhotoImage(file=os.path.abspath(os.path.join("chromecast_volumecontrol/ico/")) +"/cc.png"))
     root.protocol("WM_DELETE_WINDOW", root.iconify)
     root.style = Style()
     root.title("Control my Chromecasts")
