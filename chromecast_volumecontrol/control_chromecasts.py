@@ -4,7 +4,7 @@ import pychromecast
 
 class Control_Chromecasts():
     def __init__(self):
-        self.chromecasts = pychromecast.get_chromecasts()
+        self.chromecasts = pychromecast.get_chromecasts()[0]
         print(self.chromecasts)
 
     def get_chromecast_names(self):

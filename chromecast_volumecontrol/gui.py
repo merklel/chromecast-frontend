@@ -41,11 +41,12 @@ class CC_Slider_Frame(LabelFrame):
         current_value = cc.status.volume_level
         self.scale = Scale(self, from_=100, to=0, orient = "vertical", length = 300)
         self.scale.set(current_value*100)
-        ttk_label=Label(self, text=cc.device.friendly_name)
+        # ttk_label=Label(self, text=cc.device.friendly_name)
         self.ttk_percentage=Label(self, text=str(round(current_value*100,2)) + " %")
 
         # set frame name
-        self.configure(text="    " + cc.device.friendly_name + "    ")
+        #self.configure(text="    " + cc.device.friendly_name + "    ")
+        self.configure(text="    " + cc.name + "    ")
 
         self.scale.bind("<ButtonRelease-1>", self.scale_callback)
         self.scale.pack(side=BOTTOM)
@@ -56,7 +57,7 @@ class CC_Slider_Frame(LabelFrame):
 
     def scale_callback(self, v):
         self.cc.set_volume(float(v.widget.get() / 100))
-        print("set volume on ", self.cc.device.friendly_name)
+        print("set volume on ", self.cc.name)
         self.ttk_percentage.configure(text=str(round(v.widget.get(), 2)) + " %")
 
     def update_percent_label(self):
