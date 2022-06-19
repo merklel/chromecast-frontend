@@ -5,7 +5,7 @@ with open("readme.md", "r") as fh:
 
 setuptools.setup(
     name="chromecast_volumecontrol", # Replace with your own username
-    version="0.0.5",
+    version="0.0.8",
     author="Lukas Merkle",
     author_email="lukas.merkle@live.de",
     description="Control Chromecast Volume",
