@@ -22,7 +22,7 @@ install it from [pypi](https://pypi.org/project/chromecast-volumecontrol/)
 
 then, you can use run 
 
-$ cc_volumecontrol` 
+`$ cc_volumecontrol` 
 
 to open the gui 
 
